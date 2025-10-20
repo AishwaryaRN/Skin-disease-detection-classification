@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Skin Disease Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+             background-image: url('/static/background1.jpeg');
+             background-size: cover;
+             background-position: center;
+             background-attachment: fixed;
+             color: #fff;
+               font-family: 'Segoe UI', sans-serif;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .upload-card {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+        .btn-gold {
+            background-color: #d4af37;
+            color: #111;
+            font-weight: bold;
+        }
+        .btn-gold:hover {
+            background-color: #b28f28;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">AI Skin Detection</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero text-center">
+    <img src="/static/dricon2.png" alt="Doctor" class="img-fluid mb-4" style="max-width: 200px; border-radius: 50%;">
+    <h1>Detect Skin Diseases Accurately</h1>
+    <p class="lead">"Healthy skin is a reflection of overall wellness."</p>
+</div>
+
+
+<!-- Upload Card -->
+<div class="upload-card">
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" class="form-control mb-3" required>
+        <button class="btn btn-gold w-100">Predict Disease</button>
+    </form>
+</div>
+
+</body>
+</html>
