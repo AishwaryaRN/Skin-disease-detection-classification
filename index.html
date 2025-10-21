@@ -1,64 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AI Skin Disease Detection</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-             background-image: url('/static/background1.jpeg');
-             background-size: cover;
-             background-position: center;
-             background-attachment: fixed;
-             color: #fff;
-               font-family: 'Segoe UI', sans-serif;
-        }
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .upload-card {
-            max-width: 500px;
-            margin: 30px auto;
-            padding: 30px;
-            background-color: #1a1a1a;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-        }
-        .btn-gold {
-            background-color: #d4af37;
-            color: #111;
-            font-weight: bold;
-        }
-        .btn-gold:hover {
-            background-color: #b28f28;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Skin Disease Detection</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    background: radial-gradient(circle at top, #1c1c1c, #000);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+}
+.navbar { background: rgba(0,0,0,0.9); }
+.hero { padding: 60px 20px; }
+.hero img { max-width: 120px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #d4af37; }
+.hero h1 { color: #ffd700; font-weight: 700; }
+.hero p { color: #f8f8f8; font-size: 1.2rem; margin-bottom: 40px; }
+
+.upload-card {
+    max-width: 450px;
+    margin: 20px auto 60px;
+    padding: 30px;
+    background-color: rgba(25,25,25,0.85);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(212,175,55,0.5);
+}
+
+.btn-gold {
+    background: linear-gradient(90deg, #d4af37, #b28f28);
+    color: #111;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background: linear-gradient(90deg, #ffd700, #d4af37);
+    color: #000;
+    transform: scale(1.05);
+}
+
+.steps {
+    margin: 50px 0 30px;
+}
+.steps img { width:60px; margin-bottom:10px; }
+.steps h6 { font-weight:bold; color:#ffd700; }
+
+footer { color: #aaa; padding: 15px; font-size: 0.9rem; }
+</style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">AI Skin Detection</a>
-    </div>
+<nav class="navbar navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">🩺 AI Skin Detector</a>
+  </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="hero text-center">
-    <img src="/static/dricon2.png" alt="Doctor" class="img-fluid mb-4" style="max-width: 200px; border-radius: 50%;">
+<div class="hero">
+    <img src="/static/medical.png" alt="Doctor Icon">
     <h1>Detect Skin Diseases Accurately</h1>
-    <p class="lead">"Healthy skin is a reflection of overall wellness."</p>
+    <p>"Healthy skin is a reflection of overall wellness."</p>
 </div>
 
+<div class="container steps text-center">
+    <h2 style="color:#ffd700;">How It Works</h2>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-2 col-6">
+            <img src="/static/icons/cameraicon.png" alt="Photo">
+            <h6>Step 1: Upload Photo</h6>
+        </div>
+        <div class="col-md-2 col-6">
+            <img src="/static/icons/aibrain.png" alt="Analyze">
+            <h6>Step 2: AI Analysis</h6>
+        </div>
+        <div class="col-md-2 col-6">
+            <img src="/static/icons/download.png" alt="PDF">
+            <h6>Step 3: PDF Report</h6>
+        </div>
+        <div class="col-md-2 col-6">
+            <img src="/static/icons/consult.png" alt="Consultant">
+            <h6>Step 4: AI Consultant</h6>
+        </div>
+    </div>
+</div>
 
-<!-- Upload Card -->
 <div class="upload-card">
     <form action="/predict" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" class="form-control mb-3" required>
-        <button class="btn btn-gold w-100">Predict Disease</button>
+        <input type="file" id="fileInput" name="file" class="form-control mb-3" required>
+        <button class="btn btn-gold w-100 mt-2">Predict Disease</button>
     </form>
 </div>
+
+
+<footer>© 2025 AI Skin Disease Detection</footer>
 
 </body>
 </html>
